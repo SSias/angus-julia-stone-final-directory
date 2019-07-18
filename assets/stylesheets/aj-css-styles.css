@@ -1,0 +1,64 @@
+.home-background {
+  background: url(../images/home-image-aj.jpg)  no-repeat center center fixed;
+  background-size: cover;
+}
+html {
+  background-color: #ffffff;
+}
+h1 {
+  font-family: "Raleway Thin", Helvetica, sans-serif;
+  font-size: 42px;
+  color: #a7aeb1;
+  padding: 5px;
+  margin-left: 100px;
+  position: relative;
+}
+nav {
+  font-family: "Raleway Light", Helvetica, sans-serif;
+  font-size: 18px;
+  color: #a7aeb1;
+  padding: 5px;
+  margin: 25px auto 500px;
+  position: absolute;
+  top: 10px;
+  right: 100px;
+}
+.logo {
+  position: relative;
+  top: 10px;
+  left: 100px;
+}
+li {
+  display: inline;
+  margin-right: 20px;
+}
+a {
+  font-family: "Raleway Light", Helvetica, sans-serif;
+  font-size: 18px;
+  color: #a7aeb1;
+  text-decoration: none;
+}
+li a:hover {
+  color: #648da1;
+}
+body {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #4f5a5e;
+}
+
+p {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #4f5a5e;
+  padding: 5px;
+  line-height: 30px;
+  margin-left: 100px;
+  position: relative;
+}
+
+footer {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 8px;
+  color: #4f5a5e;
+}
