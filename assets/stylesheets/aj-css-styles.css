@@ -38,7 +38,7 @@ a {
   color: #a7aeb1;
   text-decoration: none;
 }
-li a:hover {
+a:hover {
   color: #648da1;
 }
 body {
@@ -46,7 +46,6 @@ body {
   font-size: 16px;
   color: #4f5a5e;
 }
-
 p {
   font-family: "Raleway", Helvetica, sans-serif;
   font-size: 16px;
@@ -55,8 +54,72 @@ p {
   line-height: 30px;
   margin-left: 100px;
   position: relative;
+  text-align: justify;
 }
-
+h2 {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 24px;
+  color: #648da1;
+  text-transform: uppercase;
+  margin-right: 100px;
+  margin-left: 100px;
+  text-align: left;
+}
+.body-link {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #4f5a5e;
+}
+table.tours {
+  table-layout: auto;
+  width: 100%;
+}
+th {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 24px;
+  color: #648da1;
+  text-transform: uppercase;
+  margin-right: 100px;
+  margin-left: 100px;
+  text-align: left;
+}
+tr{
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #4f5a5e;
+  padding: 5px;
+  line-height: 25px;
+  margin-left: 100px;
+  margin-right: 100px;
+  position: relative;
+  text-align: left;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.grid-item {
+  color: #4f5a5e;
+  padding: 20px;
+  font-size: 12px;
+  text-align: left;
+}
+ul {
+  list-style-type: circle;
+  margin-left: 100px;
+}
+.right {
+  float: right;
+  padding: 20px 20px 20px 20px;
+}
+.left {
+  float: left;
+  padding: 20px 20px 20px 20px;
+  margin-left: 100px;
+}
 footer {
   font-family: "Raleway", Helvetica, sans-serif;
   font-size: 8px;
