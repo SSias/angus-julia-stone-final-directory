@@ -15,17 +15,74 @@
     <li><a href="tours.html">TOURS</a></li>
   </nav>
     <h1>SHOP</h1>
-    <p>A Grid Layout must have a parent element with the <em>display</em> property set to <em>grid</em> or <em>inline-grid</em>.</p>
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')">All</button>
+      <button class="btn" onclick="filterSelection('apparel')"> Apparel</button>
+      <button class="btn" onclick="filterSelection('albums')"> Albums</button>
+    </div>
     <div class="grid-container">
-    <div class="grid-item"><img src="./assets/images/merch-albums-snow.png"style="width:200px";/>Snow CD $25.99</div>
-    <div class="grid-item"><img src="./assets/images/merch-apparel-shirt.png"style="width:200px";/>Swoosh Red Ringer T-shirt $17.99</div>
-    <div class="grid-item"><img src="./assets/images/merch-apparel-blue-shirt.png"style="width:200px";/>Blue Ringer T-shirt $17.99</div>
-    <div class="grid-item"><img src="./assets/images/merch-albums.png"style="width:200px";/>Snow Double Viynl $25.99</div>
-    <div class="grid-item"><img src="./assets/images/merch-apparel-tote-bag.png"style="width:200px";/>White Rainbow Tote Bag $12.99</div>
-    <div class="grid-item"><img src="./assets/images/merch-apparel-hat.png"style="width:200px";/>Angus & Julia Stone Hat $12.99</div>
-    <div class="grid-item"><img src="./assets/images/merch-apparel-tshirt.png"style="width:200px";/>White Rainbow T-shirt $19.99</div>
-    <div class="grid-item"><img src="./assets/images/merch-apparel-tshirt-black.png"style="width:200px";/>Black Rainbow T-shirt  $19.99</div>
-    <div class="grid-item"><img src="./assets/images/merch-apparel-socks.png"style="width:200px";/>White Rainbow Socks $9.99</div>
-</div>
+    <div class="grid-item filterDiv albums"><img src="./assets/images/merch-albums-snow.png"style="width:200px";/><br />Snow CD $25.99</div>
+    <div class="grid-item filterDiv apparel"><img src="./assets/images/merch-apparel-shirt.png"style="width:200px";/><br />Swoosh Red Ringer T-shirt $17.99</div>
+    <div class="grid-item filterDiv apparel"><img src="./assets/images/merch-apparel-blue-shirt.png"style="width:200px";/><br />Blue Ringer T-shirt $17.99</div>
+    <div class="grid-item filterDiv albums"><img src="./assets/images/merch-albums.png"style="width:200px";/><br />Snow Double Viynl $25.99</div>
+    <div class="grid-item filterDiv all"><img src="./assets/images/merch-apparel-tote-bag.png"style="width:200px";/><br />White Rainbow Tote Bag $12.99</div>
+    <div class="grid-item filterDiv apparel"><img src="./assets/images/merch-apparel-hat.png"style="width:200px";/><br />Angus & Julia Stone Hat $12.99</div>
+    <div class="grid-item filterDiv apparel"><img src="./assets/images/merch-apparel-tshirt.png"style="width:200px";/><br />White Rainbow T-shirt $19.99</div>
+    <div class="grid-item filterDiv apparel"><img src="./assets/images/merch-apparel-tshirt-black.png"style="width:200px";/><br />Black Rainbow T-shirt  $19.99</div>
+    <div class="grid-item filterDiv apparel"><img src="./assets/images/merch-apparel-socks.png"style="width:200px";/><br />White Rainbow Socks $9.99</div>
+    </div>
+
+    <br></br/>
+    <div class="footer">2019 Angus & Julia Stone // Website by SIAS</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "apparel";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
 </body>
 </html>

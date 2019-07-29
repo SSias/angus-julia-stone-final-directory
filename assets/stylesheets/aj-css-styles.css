@@ -2,6 +2,9 @@
   background: url(../images/home-image-aj.jpg)  no-repeat center center fixed;
   background-size: cover;
 }
+
+/*UNIVERSAL*/
+
 html {
   background-color: #ffffff;
 }
@@ -12,6 +15,15 @@ h1 {
   padding: 5px;
   margin-left: 100px;
   position: relative;
+}
+h2 {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 24px;
+  color: #648da1;
+  text-transform: uppercase;
+  margin-right: 100px;
+  margin-left: 100px;
+  text-align: left;
 }
 nav {
   font-family: "Raleway Light", Helvetica, sans-serif;
@@ -28,7 +40,12 @@ nav {
   top: 10px;
   left: 100px;
 }
-li {
+ul {
+  list-style-type: circle;
+  margin-left: 100px;
+  line-height: 30px;
+}
+nav li {
   display: inline;
   margin-right: 20px;
 }
@@ -56,15 +73,6 @@ p {
   position: relative;
   text-align: justify;
 }
-h2 {
-  font-family: "Raleway", Helvetica, sans-serif;
-  font-size: 24px;
-  color: #648da1;
-  text-transform: uppercase;
-  margin-right: 100px;
-  margin-left: 100px;
-  text-align: left;
-}
 .body-link {
   font-family: "Raleway", Helvetica, sans-serif;
   font-size: 16px;
@@ -79,9 +87,9 @@ th {
   font-size: 24px;
   color: #648da1;
   text-transform: uppercase;
-  margin-right: 100px;
   margin-left: 100px;
   text-align: left;
+  padding-left: 15px;
 }
 tr{
   font-family: "Raleway", Helvetica, sans-serif;
@@ -90,38 +98,116 @@ tr{
   padding: 5px;
   line-height: 25px;
   margin-left: 100px;
-  margin-right: 100px;
   position: relative;
   text-align: left;
 }
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-.grid-item {
-  color: #4f5a5e;
-  padding: 20px;
-  font-size: 12px;
-  text-align: left;
-}
-ul {
-  list-style-type: circle;
-  margin-left: 100px;
-}
-.right {
-  float: right;
-  padding: 20px 20px 20px 20px;
+td {
+  padding-left: 15px;
+  vertical-align: top;
 }
 .left {
   float: left;
-  padding: 20px 20px 20px 20px;
+  padding-right: 20px;
+/*  padding: 20px 20px 20px 20px;*/
   margin-left: 100px;
 }
-footer {
-  font-family: "Raleway", Helvetica, sans-serif;
-  font-size: 8px;
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding-top: 10px;
+   font-family: "Raleway", Helvetica, sans-serif;
+   font-size: 10px;
+   color: #a7aeb1;
+   background-color: #ffffff;
+   opacity: 0.5;
+   filter: alpha(opacity=50);
+   text-align: left;
+}
+
+/*SHOP*/
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  margin-left: 100px;
+}
+.grid-item {
   color: #4f5a5e;
+  padding-left: 0px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 12px;
+  text-align: left;
+}
+.grid-item:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  background-color: #a7aeb1;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #648da1
+}
+
+#myBtnContainer {
+  margin-left: 100px;
+}
+/*DISCOGRAPHY
+
+.zoom {
+  padding: 50px;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.zoom:hover {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+
+/*MEDIA*/
+
+.media-images {
+  margin-left: 100px;
+}
+/*.media-images:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50);*/
+}
+.media-video {
+  margin-left: 100px;
+}
+
+/*TOURS*/
+
+
+/*ABOUT*/
+
+.about-image-right {
+  float: right;
+  padding: 20px 20px 20px 20px;
+}
+
+.about-table {
+  margin-left: 100px;
+}
+
+.about-table td {
+  padding-right: 50px;
 }
