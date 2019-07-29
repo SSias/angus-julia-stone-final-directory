@@ -3,6 +3,7 @@
 <head>
   <title>Root</title>
   <link href="./assets/stylesheets/aj-css-styles.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="logo"><a href="/"><img src="./assets/images/aj-logo-blue.png" alt="Angus and Julia Stone" style="width:200px;height:95.5px;"></a>
@@ -11,7 +12,7 @@
     <li><a href="about.html">ABOUT</a></li>
     <li><a href="discography.html">DISCOGRAPHY</a></li>
     <li><a href="media.html">MEDIA</a></li>
-    <li><a href="merch.html">SHOP</a></li>
+    <li><a class="active" href="merch.html">SHOP</a></li>
     <li><a href="tours.html">TOURS</a></li>
   </nav>
     <h1>SHOP</h1>
@@ -21,7 +22,8 @@
       <button class="btn" onclick="filterSelection('albums')"> Albums</button>
     </div>
     <div class="grid-container">
-    <div class="grid-item filterDiv albums"><img src="./assets/images/merch-albums-snow.png"style="width:200px";/><br />Snow CD $25.99</div>
+    <div class="grid-item filterDiv albums">
+      <img src="./assets/images/merch-albums-snow.png"style="width:200px";/><br />Snow CD $25.99</div>
     <div class="grid-item filterDiv apparel"><img src="./assets/images/merch-apparel-shirt.png"style="width:200px";/><br />Swoosh Red Ringer T-shirt $17.99</div>
     <div class="grid-item filterDiv apparel"><img src="./assets/images/merch-apparel-blue-shirt.png"style="width:200px";/><br />Blue Ringer T-shirt $17.99</div>
     <div class="grid-item filterDiv albums"><img src="./assets/images/merch-albums.png"style="width:200px";/><br />Snow Double Viynl $25.99</div>
@@ -34,55 +36,22 @@
 
     <br></br/>
     <div class="footer">2019 Angus & Julia Stone // Website by SIAS</div>
-
-<script>
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("filterDiv");
-  if (c == "all") c = "apparel";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
-}
-
-// Show filtered elements
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
-    }
-  }
-}
-
-// Hide elements that are not selected
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);
-    }
-  }
-  element.className = arr1.join(" ");
-}
-
-// Add active class to the current control button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-</script>
 </body>
+    <script src="./assets/javascripts/jquery.min.js"></script>
+    <script src="./assets/javascripts/jquery.filterizr.min.js"></script>
+    <script src="./assets/javascripts/lodash.js"></script>
+    <script src="./assets/javascripts/mobile-menu.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.filtr-container').filterizr({});
+        $('.merch-ctrl-btn').click(function(){
+          if($(this).hasClass('active')){
+            return false;
+          } else {
+            $('.merch-ctrl-btn').removeClass('active');
+            $(this).addClass('active');
+          }
+        })
+      });
+    </script>
 </html>
